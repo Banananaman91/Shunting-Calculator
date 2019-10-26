@@ -58,7 +58,7 @@ void ShuntingCalculator::MyForm::buttonClear_Click(System::Object^ sender, Syste
 }
 
 void ShuntingCalculator::MyForm::buttonEquals_Click(System::Object^ sender, System::EventArgs^ e) {
-	textOutput.runCalculation();
+	this->textBox1->Text = textOutput.runCalculation();
 }
 
 void ShuntingCalculator::MyForm::buttonDecimal_Click(System::Object^ sender, System::EventArgs^ e) {

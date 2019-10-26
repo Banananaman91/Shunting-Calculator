@@ -137,6 +137,7 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="ShuntingAlgorithm.cpp" />
+    <ClCompile Include="Token.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h" />
@@ -145,6 +146,7 @@
     </ClInclude>
     <ClInclude Include="Output.h" />
     <ClInclude Include="ShuntingAlgorithm.h" />
+    <ClInclude Include="Token.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">

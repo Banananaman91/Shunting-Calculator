@@ -1,5 +1,5 @@
 #include "Output.h"
-#include "ShuntingAlgorithm.cpp"
+#include "ShuntingAlgorithm.h"
     
 System::String^ Output::output(System::String^ input) {
 	const char* chars = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(input)).ToPointer();
@@ -13,6 +13,9 @@ System::Void Output::clearOutput() {
 	resultOutput = "";
 }
 
-void Output::runCalculation() {
-	
+System::String^ Output::runCalculation() {
+	ShuntingAlgorithm shuntingAlgorithm;
+	resultOutput = shuntingAlgorithm.ShuntingYard(resultOutput);
+	System::String^ systemOutput = gcnew System::String(resultOutput.c_str());
+	return (systemOutput);
 }

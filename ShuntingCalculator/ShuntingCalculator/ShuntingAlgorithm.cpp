@@ -1,14 +1,120 @@
 #include "ShuntingAlgorithm.h"
-//While there are tokens to be read :
-//2.        Read a token
-//	3.        If it's a number add it to queue
-//	4.        If it's an operator
-//	5.               While there's an operator on the top of the stack with greater precedence:
-//	6.                       Pop operators from the stack onto the output queue
-//	7.               Push the current operator onto the stack
-//	8.        If it's a left bracket push it onto the stack
-//	9.        If it's a right bracket 
-//	10.            While there's not a left bracket at the top of the stack:
-//	11.                     Pop operators from the stack onto the output queue.
-//	12.             Pop the left bracket from the stack and discard it
-//	13. While there are operators on the stack, pop them to the queue
+#include <deque>
+#include "Token.h"
+#include <iostream>
+#include <vector>
+
+ShuntingAlgorithm::ShuntingAlgorithm() {
+
+}
+
+std::string ShuntingAlgorithm::ShuntingYard(std::string inputString) {
+	Token tokenObject;
+	std::deque<Token> tokens = tokenObject.convertToToken(inputString);
+	std::deque<Token> queueStack = ShuntIt(tokens);
+	std::vector<int> calculateStack;
+
+	while (!queueStack.empty())
+	{
+		Token token = queueStack.front();
+		queueStack.pop_front();
+		if (token.type == Token::Type::numberType) {
+			calculateStack.push_back(std::stoi(token.inputString));
+		}
+		else if (token.type == Token::Type::operatorType) {
+			int rightHandNumber = calculateStack.back();
+			calculateStack.pop_back();
+			int leftHandNumber = calculateStack.back();
+			calculateStack.pop_back();
+
+			switch (token.inputString[0])
+			{
+			default:
+				exit(0);
+				break;
+			case '+':
+				calculateStack.push_back(leftHandNumber + rightHandNumber);
+				break;
+			case '-':
+				calculateStack.push_back(leftHandNumber * rightHandNumber);
+				break;
+			case '/':
+				calculateStack.push_back(leftHandNumber / rightHandNumber);
+				break;
+			case '*':
+				calculateStack.push_back(leftHandNumber * rightHandNumber);
+				break;
+			}
+
+		}
+	}
+	int result = calculateStack.back();
+	std::string stringResult = std::to_string(result);
+	return stringResult;
+}
+
+
+std::deque<Token> ShuntingAlgorithm::ShuntIt(const std::deque<Token>& tokens)
+{
+	std::deque<Token> queueStack;
+	std::vector<Token> stack;
+
+	for each(Token token in tokens) {
+		switch (token.type)
+		{
+		default:
+			exit(0);
+			break;
+		case Token::Type::numberType:
+			queueStack.push_back(token);
+			break;
+		case Token::Type::operatorType:
+		{
+			Token firstOperator = token; 
+
+			while (!stack.empty())
+			{
+				Token secondOperator = stack.back();
+				if (firstOperator.precedence <= secondOperator.precedence) {
+					stack.pop_back();
+					queueStack.push_back(secondOperator);
+					continue;
+				}
+
+				break;
+			}
+			stack.push_back(firstOperator);
+		}
+
+			break;
+		case Token::Type::leftParentheses:
+			stack.push_back(token);
+
+			break;
+		case Token::Type::rightParentheses:
+		{
+			bool matchedParentheses;
+			while (!stack.empty())
+			{
+				Token topOfStack = stack.back();
+				if (topOfStack.type != Token::Type::leftParentheses) {
+					stack.pop_back();
+					queueStack.push_back(topOfStack);
+				}
+
+				stack.pop_back();
+				matchedParentheses = true;
+			}
+		}
+			break;
+		}
+	}
+
+	while (!stack.empty())
+	{
+		queueStack.push_back(stack.back());
+		stack.pop_back();
+	}
+
+	return queueStack;
+}

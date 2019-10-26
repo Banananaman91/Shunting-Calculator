@@ -9,6 +9,6 @@ public:
 
 	System::Void clearOutput();
 
-	void runCalculation();
+	System::String^ runCalculation();
 };
 
