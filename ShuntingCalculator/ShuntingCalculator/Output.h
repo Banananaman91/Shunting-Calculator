@@ -1,14 +1,16 @@
 #include <string>
 #pragma once
-class Output
-{
-public:
-	std::string resultOutput;
+namespace InputOutput {
+	class Output
+	{
+	public:
+		std::string resultOutput;
 
-	System::String^ output(System::String^ input);
+		System::String^ InputOutput(System::String^ input);
 
-	System::Void clearOutput();
+		System::String^ ClearOutput();
 
-	System::String^ runCalculation();
-};
+		System::String^ RunCalculation();
+	};
+}
 

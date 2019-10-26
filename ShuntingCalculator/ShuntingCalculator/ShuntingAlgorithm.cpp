@@ -3,28 +3,32 @@
 #include "Token.h"
 #include <iostream>
 #include <vector>
+#include <stdlib.h>
+using namespace ShuntingAlgorithmCalculator;
+using namespace Tokens;
 
 ShuntingAlgorithm::ShuntingAlgorithm() {
 
 }
 
-std::string ShuntingAlgorithm::ShuntingYard(std::string inputString) {
+std::string ShuntingAlgorithm::ShuntingYardAlgorithm(std::string inputString) {
 	Token tokenObject;
-	std::deque<Token> tokens = tokenObject.convertToToken(inputString);
+	std::deque<Token> tokens = tokenObject.ConvertToToken(inputString);
 	std::deque<Token> queueStack = ShuntIt(tokens);
-	std::vector<int> calculateStack;
+	std::vector<double> calculateStack;
 
 	while (!queueStack.empty())
 	{
 		Token token = queueStack.front();
 		queueStack.pop_front();
 		if (token.type == Token::Type::numberType) {
-			calculateStack.push_back(std::stoi(token.inputString));
+			double number = atof(token.inputString.c_str());
+			calculateStack.push_back(number);
 		}
 		else if (token.type == Token::Type::operatorType) {
-			int rightHandNumber = calculateStack.back();
+			double rightHandNumber = calculateStack.back();
 			calculateStack.pop_back();
-			int leftHandNumber = calculateStack.back();
+			double leftHandNumber = calculateStack.back();
 			calculateStack.pop_back();
 
 			switch (token.inputString[0])
@@ -36,7 +40,7 @@ std::string ShuntingAlgorithm::ShuntingYard(std::string inputString) {
 				calculateStack.push_back(leftHandNumber + rightHandNumber);
 				break;
 			case '-':
-				calculateStack.push_back(leftHandNumber * rightHandNumber);
+				calculateStack.push_back(leftHandNumber - rightHandNumber);
 				break;
 			case '/':
 				calculateStack.push_back(leftHandNumber / rightHandNumber);
@@ -48,7 +52,8 @@ std::string ShuntingAlgorithm::ShuntingYard(std::string inputString) {
 
 		}
 	}
-	int result = calculateStack.back();
+
+	double result = calculateStack.back();
 	std::string stringResult = std::to_string(result);
 	return stringResult;
 }
@@ -100,6 +105,7 @@ std::deque<Token> ShuntingAlgorithm::ShuntIt(const std::deque<Token>& tokens)
 				if (topOfStack.type != Token::Type::leftParentheses) {
 					stack.pop_back();
 					queueStack.push_back(topOfStack);
+					continue;
 				}
 
 				stack.pop_back();

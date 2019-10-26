@@ -1,21 +1,25 @@
 #include "Output.h"
 #include "ShuntingAlgorithm.h"
+using namespace InputOutput;
+using namespace ShuntingAlgorithmCalculator;
     
-System::String^ Output::output(System::String^ input) {
+System::String^ Output::InputOutput(System::String^ input) {
 	const char* chars = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(input)).ToPointer();
 	std::string inputString = std::string(chars);
 	resultOutput += inputString;
 	System::String^ systemOutput = gcnew System::String(resultOutput.c_str());
-	return (systemOutput);
+	return systemOutput;
 }
 
-System::Void Output::clearOutput() {
+System::String^ Output::ClearOutput() {
 	resultOutput = "";
+	System::String^ systemOutput = gcnew System::String(resultOutput.c_str());
+	return systemOutput;
 }
 
-System::String^ Output::runCalculation() {
+System::String^ Output::RunCalculation() {
 	ShuntingAlgorithm shuntingAlgorithm;
-	resultOutput = shuntingAlgorithm.ShuntingYard(resultOutput);
+	resultOutput = shuntingAlgorithm.ShuntingYardAlgorithm(resultOutput);
 	System::String^ systemOutput = gcnew System::String(resultOutput.c_str());
-	return (systemOutput);
+	return systemOutput;
 }

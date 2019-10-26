@@ -1,24 +1,26 @@
 #include "Token.h"
+using namespace Tokens;
 
 Token::Token() {
 
 }
 
-std::deque<Token> Token::convertToToken(std::string& inputString)
+std::deque<Token> Token::ConvertToToken(std::string& inputString)
 {
 	std::deque<Token> tokens;
 	std::string number;
 
 	for (const char* i = inputString.c_str(); *i; i++)
 	{
-		if (isdigit(*i)) {
+		if (isdigit(*i) || *i == '.') {
 			number += *i;
 		}
 		else {
-			tokens.push_back(Token::Token(Token::Type::numberType, number));
+			
+			if(number != "") tokens.push_back(Token::Token(Token::Type::numberType, number));
 			number = "";
 
-			tokens.push_back(operatorToken(*i));
+			tokens.push_back(OperatorToken(*i));
 		}
 	}
 	if (number != "") {
@@ -28,7 +30,7 @@ std::deque<Token> Token::convertToToken(std::string& inputString)
 	return tokens;
 }
 
-Token Token::operatorToken(char outputChar){
+Token Token::OperatorToken(char outputChar){
 	switch (outputChar)
 	{
 	default:
