@@ -16,8 +16,8 @@ std::deque<Token> Token::ConvertToToken(std::string& inputString)
 			number += *i;
 		}
 		else {
-			
-			if(number != "") tokens.push_back(Token::Token(Token::Type::numberType, number));
+
+			if (number != "") tokens.push_back(Token::Token(Token::Type::numberType, number));
 			number = "";
 
 			tokens.push_back(OperatorToken(*i));
@@ -30,7 +30,7 @@ std::deque<Token> Token::ConvertToToken(std::string& inputString)
 	return tokens;
 }
 
-Token Token::OperatorToken(char outputChar){
+Token Token::OperatorToken(char outputChar) {
 	switch (outputChar)
 	{
 	default:
@@ -44,9 +44,13 @@ Token Token::OperatorToken(char outputChar){
 		return Token::Token(Token::Type::operatorType, "/", 2);
 	case '*':
 		return Token::Token(Token::Type::operatorType, "*", 2);
+	case '%':
+		return Token::Token(Token::Type::operatorType, "%", 2);
 	case '(':
 		return Token::Token(Token::Type::leftParentheses, "(");
 	case ')':
 		return Token::Token(Token::Type::rightParentheses, ")");
+	case '^':
+		return Token::Token(Token::Type::operatorType, "^", 3);
 	}
 }

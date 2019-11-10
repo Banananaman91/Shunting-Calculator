@@ -48,6 +48,13 @@ std::string ShuntingAlgorithm::ShuntingYardAlgorithm(std::string inputString) {
 			case '*':
 				calculateStack.push_back(leftHandNumber * rightHandNumber);
 				break;
+			case '%':
+				calculateStack.push_back(leftHandNumber);
+				calculateStack.push_back(int(leftHandNumber) % int(rightHandNumber));
+				break;
+			case '^':
+				calculateStack.push_back(pow(leftHandNumber, rightHandNumber));
+				break;
 			}
 
 		}
@@ -64,7 +71,7 @@ std::deque<Token> ShuntingAlgorithm::ShuntIt(const std::deque<Token>& tokens)
 	std::deque<Token> queueStack;
 	std::vector<Token> stack;
 
-	for each(Token token in tokens) {
+	for each (Token token in tokens) {
 		switch (token.type)
 		{
 		default:
@@ -75,7 +82,7 @@ std::deque<Token> ShuntingAlgorithm::ShuntIt(const std::deque<Token>& tokens)
 			break;
 		case Token::Type::operatorType:
 		{
-			Token firstOperator = token; 
+			Token firstOperator = token;
 
 			while (!stack.empty())
 			{
@@ -91,7 +98,7 @@ std::deque<Token> ShuntingAlgorithm::ShuntIt(const std::deque<Token>& tokens)
 			stack.push_back(firstOperator);
 		}
 
-			break;
+		break;
 		case Token::Type::leftParentheses:
 			stack.push_back(token);
 
@@ -112,7 +119,7 @@ std::deque<Token> ShuntingAlgorithm::ShuntIt(const std::deque<Token>& tokens)
 				matchedParentheses = true;
 			}
 		}
-			break;
+		break;
 		}
 	}
 
