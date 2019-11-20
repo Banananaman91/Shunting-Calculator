@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{67BBA891-8CA4-3A09-86C3-71407672B484}</ProjectGuid>
+    <RootNamespace>SuperCalculatorConverter</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.18362.0</WindowsTargetPlatformMinVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;" Label="Configuration">
+    <PlatformToolset>v142</PlatformToolset>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>SuperCalculatorConverter</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;" Label="Configuration">
+    <PlatformToolset>v142</PlatformToolset>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>SuperCalculatorConverter</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" />
+  </ImportGroup>
+  <ImportGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">debug\</OutDir>
+    <IntDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">debug\</IntDir>
+    <TargetName Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">SuperCalculatorConverter</TargetName>
+    <IgnoreImportLibrary Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</IgnoreImportLibrary>
+    <OutDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">release\</OutDir>
+    <IntDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">release\</IntDir>
+    <TargetName Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">SuperCalculatorConverter</TargetName>
+    <IgnoreImportLibrary Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;.;.;debug;../../../../../../include;$(QTDIR)/mkspecs/win32-msvc;C:\QT\5.12.5\MSVC2017\include;C:\QT\5.12.5\MSVC2017\include\QtGui;C:\QT\5.12.5\MSVC2017\include\QtANGLE;C:\QT\5.12.5\MSVC2017\include\QtCore;&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter/$(ConfigurationName)&quot;;/include;C:\QT\5.12.5\MSVC2017\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;_WINDOWS;_UNICODE;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>C:\QT\5.12.5\MSVC2017\lib\Qt5Guid.lib;C:\QT\5.12.5\MSVC2017\lib\Qt5Cored.lib;C:\QT\5.12.5\MSVC2017\lib\qtmaind.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\opensslx86\lib;C:\Utils\my_sql\mysql-5.6.11-win32\lib;C:\Utils\postgresqlx86\pgsql\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\SuperCalculatorConverter.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;_WINDOWS;_UNICODE;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;.;.;debug;../../../../../../include;$(QTDIR)/mkspecs/win32-msvc;C:\QT\5.12.5\MSVC2017\include;C:\QT\5.12.5\MSVC2017\include\QtGui;C:\QT\5.12.5\MSVC2017\include\QtANGLE;C:\QT\5.12.5\MSVC2017\include\QtCore;&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter/$(ConfigurationName)&quot;;/include;C:\QT\5.12.5\MSVC2017\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;_WINDOWS;_UNICODE;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName></ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>C:\QT\5.12.5\MSVC2017\lib\Qt5Gui.lib;C:\QT\5.12.5\MSVC2017\lib\Qt5Core.lib;C:\QT\5.12.5\MSVC2017\lib\qtmain.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\opensslx86\lib;C:\Utils\my_sql\mysql-5.6.11-win32\lib;C:\Utils\postgresqlx86\pgsql\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\SuperCalculatorConverter.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;_WINDOWS;_UNICODE;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Output.cpp" />
+    <ClCompile Include="ShuntingAlgorithm.cpp" />
+    <ClCompile Include="Token.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="qtcalculatorconverter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Output.h" />
+    <ClInclude Include="ShuntingAlgorithm.h" />
+    <ClInclude Include="Token.h" />
+    <CustomBuild Include="qtcalculatorconverter.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">qtcalculatorconverter.h;$(ConfigurationName)\moc_predefs.h;C:\QT\5.12.5\MSVC2017\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\QT\5.12.5\MSVC2017\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_WINDOWS -D_UNICODE -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include &quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter/$(ConfigurationName)/moc_predefs.h&quot; -IC:/QT/5.12.5/MSVC2017/mkspecs/win32-msvc -I&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter&quot; -I&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter&quot; -I&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter&quot; -I&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter/debug&quot; -ID:/../include -I&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter/$(QTDIR)/mkspecs/win32-msvc&quot; -IC:/QT/5.12.5/MSVC2017/include -IC:/QT/5.12.5/MSVC2017/include/QtGui -IC:/QT/5.12.5/MSVC2017/include/QtANGLE -IC:/QT/5.12.5/MSVC2017/include/QtCore -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\ATLMFC\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt&quot; qtcalculatorconverter.h -o \moc_qtcalculatorconverter.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC qtcalculatorconverter.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">$(ConfigurationName)\moc_qtcalculatorconverter.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">qtcalculatorconverter.h;$(ConfigurationName)\moc_predefs.h;C:\QT\5.12.5\MSVC2017\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\QT\5.12.5\MSVC2017\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_WINDOWS -D_UNICODE -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include &quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter/$(ConfigurationName)/moc_predefs.h&quot; -IC:/QT/5.12.5/MSVC2017/mkspecs/win32-msvc -I&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter&quot; -I&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter&quot; -I&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter&quot; -I&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter/debug&quot; -ID:/../include -I&quot;D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/SuperCalculatorConverter/$(QTDIR)/mkspecs/win32-msvc&quot; -IC:/QT/5.12.5/MSVC2017/include -IC:/QT/5.12.5/MSVC2017/include/QtGui -IC:/QT/5.12.5/MSVC2017/include/QtANGLE -IC:/QT/5.12.5/MSVC2017/include/QtCore -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\ATLMFC\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt&quot; qtcalculatorconverter.h -o \moc_qtcalculatorconverter.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC qtcalculatorconverter.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">$(ConfigurationName)\moc_qtcalculatorconverter.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\QT\5.12.5\MSVC2017\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">cl -Bx&quot;$(QTDIR)\bin\qmake.exe&quot; -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -Zi -MDd -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E C:\QT\5.12.5\MSVC2017\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;\moc_predefs.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">Generate moc_predefs.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">$(ConfigurationName)\moc_predefs.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\QT\5.12.5\MSVC2017\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">cl -Bx&quot;$(QTDIR)\bin\qmake.exe&quot; -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E C:\QT\5.12.5\MSVC2017\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;\moc_predefs.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">Generate moc_predefs.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">$(ConfigurationName)\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClCompile Include="\moc_qtcalculatorconverter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="qtcalculatorconverter.ui" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

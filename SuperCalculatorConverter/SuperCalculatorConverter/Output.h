@@ -6,14 +6,10 @@ namespace InputOutput {
 	public:
 		std::string resultOutput;
 		std::string previousEquation;
-
-		System::String^ InputOutput(System::String^ input);
-
-		System::String^ ClearOutput();
-
-		System::String^ RunCalculation();
-
-		System::String^ PreviousCalculation();
+		std::string InputOutput(std::string input);
+		std::string ClearOutput();
+		std::string RunCalculation();
+		std::string PreviousCalculation();
 	};
 }
 

@@ -1,52 +1,41 @@
-#include "Output.h"
+#include "ProcessOutput.h"
 #include "ShuntingAlgorithm.h"
-#include <windows.h>
+
 using namespace InputOutput;
 using namespace ShuntingAlgorithmCalculator;
 
-System::String^ Output::InputOutput(System::String^ input) {
-	const char* chars = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(input)).ToPointer();
-	std::string inputString = std::string(chars);
-	if (!resultOutput.empty() && !isdigit(inputString.back())) {
-		if (!isdigit(resultOutput.back()) && inputString.back() != '(' && resultOutput.back() != ')') {
-			System::String^ systemOutput = gcnew System::String(resultOutput.c_str());
-			return systemOutput;
+std::string Output::InputOutput(std::string input) {
+	if (!resultOutput.empty() && !isdigit(input.back())) {
+		if (!isdigit(resultOutput.back()) && input.back() != '(' && resultOutput.back() != ')') {
+			return resultOutput;
 		}
 	}
 
 	if (!resultOutput.empty() && isdigit(resultOutput.back())) {
-		if (inputString.back() == '(') {
-			System::String^ systemOutput = gcnew System::String(resultOutput.c_str());
-			return systemOutput;
+		if (input.back() == '(') {
+			return resultOutput;
 		}
 	}
 
-	resultOutput += inputString;
-	System::String^ systemOutput = gcnew System::String(resultOutput.c_str());
-	return systemOutput;
+	resultOutput += input;
+	return resultOutput;
 
 }
 
-System::String^ Output::ClearOutput() {
+std::string Output::ClearOutput() {
 	resultOutput = "";
-	System::String^ systemOutput = gcnew System::String(resultOutput.c_str());
-	return systemOutput;
+	return resultOutput;
 }
 
-System::String^ Output::RunCalculation() {
+std::string Output::RunCalculation() {
 	ShuntingAlgorithm shuntingAlgorithm;
 
 	resultOutput = shuntingAlgorithm.ShuntingYardAlgorithm(resultOutput);
-	System::String^ systemOutput = gcnew System::String(resultOutput.c_str());
-	return systemOutput;
+	return resultOutput;
 }
 
-System::String^ InputOutput::Output::PreviousCalculation()
+std::string Output::PreviousCalculation()
 {
 	previousEquation = resultOutput + "\n";
-	if (previousEquation == "2+2-1\n") {
-		PlaySound(TEXT("QuickMath.wav"), NULL, SND_SYNC);
-	}
-	System::String^ systemOutput = gcnew System::String(previousEquation.c_str());
-	return systemOutput;
+	return previousEquation;
 }

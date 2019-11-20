@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 3.13 FATAL_ERROR) #I changed the min. version because fuck 3.0
+﻿cmake_minimum_required(VERSION 3.13 FATAL_ERROR) #cmake min version
 project(SuperCalculatorConverter VERSION 0.0.1) #your project name and version
 
 #sets the language version
@@ -11,9 +11,9 @@ find_package(Qt5 COMPONENTS REQUIRED Core Gui Widgets)
 # file from the qt5_wrap_ui call below.
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-#creates the specified variables to be replaced when used elsewhre i.e. project_headers becaomes mainwindow.h
+#creates the specified variables to be replaced when used elsewhere
 set(project_sources main.cpp qtcalculatorconverter.cpp)
-set(project_headers qtcalculatorconverter.h)
+set(project_headers qtcalculatorconverter.h ui_qtcalculatorconverter.h)
 set(project_ui qtcalculatorconverter.ui)
 
 # wrap the ui file to a c++ header
