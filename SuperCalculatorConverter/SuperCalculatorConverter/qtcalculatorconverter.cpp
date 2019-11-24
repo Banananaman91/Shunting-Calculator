@@ -3,6 +3,8 @@
 #include "Output.h"
 using namespace InputOutput;
 
+Output* inputOutput{};
+
 QtCalculatorConverter::QtCalculatorConverter(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::QtCalculatorConverter)
@@ -17,9 +19,9 @@ QtCalculatorConverter::~QtCalculatorConverter()
 
 void QtCalculatorConverter::on_two_clicked()
 {
-	Output inputOutput;
+	
 	//inputOutput.resultOutput += "2";
-	displayOutput = inputOutput.InputOutput("2");
+	displayOutput = inputOutput->InputOutput("2");
 	//ui->numberDisplay->display(std::stoi(inputOutput.resultOutput));
 }
 

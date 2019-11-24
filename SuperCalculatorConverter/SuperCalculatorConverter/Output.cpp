@@ -10,16 +10,13 @@ std::string Output::InputOutput(std::string input) {
 			return resultOutput;
 		}
 	}
-
 	if (!resultOutput.empty() && isdigit(resultOutput.back())) {
 		if (input.back() == '(') {
 			return resultOutput;
 		}
 	}
-
 	resultOutput += input;
 	return resultOutput;
-
 }
 
 std::string Output::ClearOutput() {
