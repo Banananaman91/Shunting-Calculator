@@ -16,7 +16,7 @@ CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -D_WINDOWS -D_UNICODE -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -g -Wall -W -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -g -Wall -W -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I..\SuperCalculatorConverter -I. -I..\SuperCalculatorConverter -I..\SuperCalculatorConverter -I..\SuperCalculatorConverter\debug -I../../../../../../include -I$(QTDIR)/mkspecs/win32-msvc -IC:\Qt\5.12.5\mingw73_32\include -IC:\Qt\5.12.5\mingw73_32\include\QtGui -IC:\Qt\5.12.5\mingw73_32\include\QtANGLE -IC:\Qt\5.12.5\mingw73_32\include\QtCore -I"D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/build-SuperCalculatorConverter-Desktop_Qt_5_12_5_MinGW_32_bit-Debug/$(ConfigurationName)" -IC:\Qt\5.12.5\mingw73_32\mkspecs\win32-g++ 
+INCPATH       = -I..\SuperCalculatorConverter -I. -I..\SuperCalculatorConverter -I..\SuperCalculatorConverter -I./debug -I../../../../../../include -I$(QTDIR)/mkspecs/win32-msvc -IC:\Qt\5.12.5\mingw73_32\include -IC:\Qt\5.12.5\mingw73_32\include\QtGui -IC:\Qt\5.12.5\mingw73_32\include\QtANGLE -IC:\Qt\5.12.5\mingw73_32\include\QtCore -I"D:/Year 2/C++/Shunting-Calculator/SuperCalculatorConverter/build-SuperCalculatorConverter-Desktop_Qt_5_12_5_MinGW_32_bit-Debug/$(ConfigurationName)" -IC:\Qt\5.12.5\mingw73_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
 LIBS        =        C:\Qt\5.12.5\mingw73_32\lib\libQt5Guid.a C:\Qt\5.12.5\mingw73_32\lib\libQt5Cored.a  -lmingw32 C:\Qt\5.12.5\mingw73_32\lib\libqtmaind.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.6.11-win32\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
@@ -138,8 +138,7 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 
 ####### Compile
 
-debug/Output.o: ../SuperCalculatorConverter/Output.cpp ../SuperCalculatorConverter/Output.h \
-		../SuperCalculatorConverter/ShuntingAlgorithm.h \
+debug/Output.o: ../SuperCalculatorConverter/Output.cpp ../SuperCalculatorConverter/ShuntingAlgorithm.h \
 		../SuperCalculatorConverter/Token.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Output.o ..\SuperCalculatorConverter\Output.cpp
 
@@ -153,7 +152,8 @@ debug/Token.o: ../SuperCalculatorConverter/Token.cpp ../SuperCalculatorConverter
 debug/main.o: ../SuperCalculatorConverter/main.cpp ../SuperCalculatorConverter/qtcalculatorconverter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\SuperCalculatorConverter\main.cpp
 
-debug/qtcalculatorconverter.o: ../SuperCalculatorConverter/qtcalculatorconverter.cpp ../SuperCalculatorConverter/qtcalculatorconverter.h
+debug/qtcalculatorconverter.o: ../SuperCalculatorConverter/qtcalculatorconverter.cpp ../SuperCalculatorConverter/qtcalculatorconverter.h \
+		../SuperCalculatorConverter/Output.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\qtcalculatorconverter.o ..\SuperCalculatorConverter\qtcalculatorconverter.cpp
 
 debug/moc_qtcalculatorconverter.o: $(ConfigurationName)/moc_qtcalculatorconverter.cpp 

@@ -13,7 +13,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 #creates the specified variables to be replaced when used elsewhere
 set(project_sources main.cpp qtcalculatorconverter.cpp)
-set(project_headers qtcalculatorconverter.h ui_qtcalculatorconverter.h)
+set(project_headers qtcalculatorconverter.h)
 set(project_ui qtcalculatorconverter.ui)
 
 # wrap the ui file to a c++ header
