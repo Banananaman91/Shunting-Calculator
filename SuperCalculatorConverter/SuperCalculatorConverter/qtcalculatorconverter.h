@@ -37,7 +37,25 @@ private slots:
 
     void on_zero_clicked();
 
-    void on_numberDisplay_windowIconTextChanged(const QString &iconText);
+    void on_addition_clicked();
+
+    void on_minus_clicked();
+
+    void on_divide_clicked();
+
+    void on_multiply_clicked();
+
+    void on_equals_clicked();
+
+    void on_clear_clicked();
+
+    void on_power_clicked();
+
+    void on_rightParentheses_clicked();
+
+    void on_leftParentheses_clicked();
+
+    void on_decimal_clicked();
 
     void on_pushButton_clicked();
 

@@ -1,9 +1,9 @@
 #include "qtcalculatorconverter.h"
 #include "ui_qtcalculatorconverter.h"
-#include "Output.h"
+#include "ProcessOutput.h"
 using namespace InputOutput;
 
-Output* inputOutput{};
+ProcessOutput inputOutput;
 
 QtCalculatorConverter::QtCalculatorConverter(QWidget *parent) :
     QMainWindow(parent),
@@ -19,64 +19,126 @@ QtCalculatorConverter::~QtCalculatorConverter()
 
 void QtCalculatorConverter::on_two_clicked()
 {
-	
-	//inputOutput.resultOutput += "2";
-	displayOutput = inputOutput->InputOutput("2");
-	//ui->numberDisplay->display(std::stoi(inputOutput.resultOutput));
+	displayOutput = inputOutput.InputOutput("2");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
 void QtCalculatorConverter::on_one_clicked()
 {
-	//inputOutput.InputOutput("1");
-	//ui->numberDisplay->display(std::stoi(inputOutput.resultOutput));
+	displayOutput = inputOutput.InputOutput("1");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
 void QtCalculatorConverter::on_three_clicked()
 {
-
+	displayOutput = inputOutput.InputOutput("3");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
 void QtCalculatorConverter::on_four_clicked()
 {
-
+	displayOutput = inputOutput.InputOutput("4");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
 void QtCalculatorConverter::on_five_clicked()
 {
-
+	displayOutput = inputOutput.InputOutput("5");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
 void QtCalculatorConverter::on_six_clicked()
 {
-
+	displayOutput = inputOutput.InputOutput("6");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
 void QtCalculatorConverter::on_seven_clicked()
 {
-
+	displayOutput = inputOutput.InputOutput("7");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
 void QtCalculatorConverter::on_eight_clicked()
 {
-
+	displayOutput = inputOutput.InputOutput("8");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
 void QtCalculatorConverter::on_nine_clicked()
 {
-
+	displayOutput = inputOutput.InputOutput("9");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
 void QtCalculatorConverter::on_zero_clicked()
 {
-
+	displayOutput = inputOutput.InputOutput("0");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
-void QtCalculatorConverter::on_numberDisplay_windowIconTextChanged(const QString &iconText)
+void QtCalculatorConverter::on_addition_clicked()
 {
-	
+	displayOutput = inputOutput.InputOutput("+");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+}
+
+void QtCalculatorConverter::on_minus_clicked()
+{
+	displayOutput = inputOutput.InputOutput("-");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+}
+
+void QtCalculatorConverter::on_divide_clicked()
+{
+	displayOutput = inputOutput.InputOutput("/");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+}
+
+void QtCalculatorConverter::on_multiply_clicked()
+{
+	displayOutput = inputOutput.InputOutput("*");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+}
+
+void QtCalculatorConverter::on_equals_clicked()
+{
+	inputOutput.RunCalculation();
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.previousEquation));
+}
+
+void QtCalculatorConverter::on_clear_clicked()
+{
+	inputOutput.ClearOutput();
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+}
+
+void QtCalculatorConverter::on_power_clicked()
+{
+	displayOutput = inputOutput.InputOutput("^");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+}
+
+void QtCalculatorConverter::on_rightParentheses_clicked()
+{
+	displayOutput = inputOutput.InputOutput(")");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+}
+
+void QtCalculatorConverter::on_leftParentheses_clicked()
+{
+	displayOutput = inputOutput.InputOutput("(");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+}
+
+void QtCalculatorConverter::on_decimal_clicked()
+{
+	displayOutput = inputOutput.InputOutput(".");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
 void QtCalculatorConverter::on_pushButton_clicked()
 {
-
+	ui->lengthTextInput->setText(ui->lengthInputList->currentItem()->text());
+	ui->converterOutput->setText(ui->lengthOutputList->currentItem()->text());
 }
