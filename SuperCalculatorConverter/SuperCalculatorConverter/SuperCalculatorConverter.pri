@@ -7,11 +7,11 @@
 message("You are running qmake on a generated .pro file. This may not work!")
 
 
-HEADERS += ./Output.h \
+HEADERS += ./ProcessOutput.h \
     ./ShuntingAlgorithm.h \
     ./Token.h \
     ./qtcalculatorconverter.h
-SOURCES += ./Output.cpp \
+SOURCES += ./ProcessOutput.cpp \
     ./ShuntingAlgorithm.cpp \
     ./Token.cpp \
     ./main.cpp \

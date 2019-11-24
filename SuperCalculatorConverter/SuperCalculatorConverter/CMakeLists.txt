@@ -3,6 +3,9 @@ project(SuperCalculatorConverter VERSION 0.0.1) #your project name and version
 
 #sets the language version
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
 
 # find Qt5 and required components
 find_package(Qt5 COMPONENTS REQUIRED Core Gui Widgets)
@@ -12,8 +15,8 @@ find_package(Qt5 COMPONENTS REQUIRED Core Gui Widgets)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 #creates the specified variables to be replaced when used elsewhere
-set(project_sources main.cpp qtcalculatorconverter.cpp)
-set(project_headers qtcalculatorconverter.h)
+set(project_sources main.cpp qtcalculatorconverter.cpp ProcessOutput.cpp ShuntingAlgorithm.cpp Token.cpp)
+set(project_headers qtcalculatorconverter.h ProcessOutput.h ShuntingAlgorithm.h Token.h)
 set(project_ui qtcalculatorconverter.ui)
 
 # wrap the ui file to a c++ header
