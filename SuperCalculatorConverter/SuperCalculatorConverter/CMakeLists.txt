@@ -15,8 +15,8 @@ find_package(Qt5 COMPONENTS REQUIRED Core Gui Widgets)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 #creates the specified variables to be replaced when used elsewhere
-set(project_sources main.cpp qtcalculatorconverter.cpp ProcessOutput.cpp ShuntingAlgorithm.cpp Token.cpp)
-set(project_headers qtcalculatorconverter.h ProcessOutput.h ShuntingAlgorithm.h Token.h)
+set(project_sources main.cpp qtcalculatorconverter.cpp ProcessOutput.cpp ShuntingAlgorithm.cpp Token.cpp Converter.cpp)
+set(project_headers qtcalculatorconverter.h ProcessOutput.h ShuntingAlgorithm.h Token.h Converter.h)
 set(project_ui qtcalculatorconverter.ui)
 
 # wrap the ui file to a c++ header

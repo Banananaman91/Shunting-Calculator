@@ -1,6 +1,7 @@
 #include "qtcalculatorconverter.h"
 #include "ui_qtcalculatorconverter.h"
 #include "ProcessOutput.h"
+#include <QString>
 using namespace InputOutput;
 
 ProcessOutput inputOutput;
@@ -139,6 +140,12 @@ void QtCalculatorConverter::on_decimal_clicked()
 
 void QtCalculatorConverter::on_pushButton_clicked()
 {
-	ui->lengthTextInput->setText(ui->lengthInputList->currentItem()->text());
-	ui->converterOutput->setText(ui->lengthOutputList->currentItem()->text());
+	QString inputString = ui->lengthInputList->currentItem()->text();
+	QString outputString = ui->lengthOutputList->currentItem()->text();
+	QString inputValueString = ui->lengthTextInput->toPlainText();
+	std::string input = inputString.toStdString();
+	std::string output = outputString.toStdString();
+	std::string inputValue = inputValueString.toStdString();
+	displayOutput = inputOutput.ConvertLength(input, output, inputValue);
+	ui->converterOutput->setText(QString::fromStdString(displayOutput));
 }
