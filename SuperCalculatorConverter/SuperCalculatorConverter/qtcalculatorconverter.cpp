@@ -21,97 +21,97 @@ QtCalculatorConverter::~QtCalculatorConverter()
 void QtCalculatorConverter::on_two_clicked()
 {
 	displayOutput = inputOutput.InputOutput("2");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_one_clicked()
 {
 	displayOutput = inputOutput.InputOutput("1");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_three_clicked()
 {
 	displayOutput = inputOutput.InputOutput("3");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_four_clicked()
 {
 	displayOutput = inputOutput.InputOutput("4");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_five_clicked()
 {
 	displayOutput = inputOutput.InputOutput("5");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_six_clicked()
 {
 	displayOutput = inputOutput.InputOutput("6");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_seven_clicked()
 {
 	displayOutput = inputOutput.InputOutput("7");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_eight_clicked()
 {
 	displayOutput = inputOutput.InputOutput("8");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_nine_clicked()
 {
 	displayOutput = inputOutput.InputOutput("9");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_zero_clicked()
 {
 	displayOutput = inputOutput.InputOutput("0");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_addition_clicked()
 {
 	displayOutput = inputOutput.InputOutput("+");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_minus_clicked()
 {
 	displayOutput = inputOutput.InputOutput("-");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_divide_clicked()
 {
 	displayOutput = inputOutput.InputOutput("/");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_multiply_clicked()
 {
 	displayOutput = inputOutput.InputOutput("*");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_modulus_clicked()
 {
 	displayOutput = inputOutput.InputOutput("%");
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_equals_clicked()
 {
-	inputOutput.RunCalculation();
-	ui->displayLabel->setText(QString::fromStdString(inputOutput.previousEquation));
+	displayOutput = inputOutput.RunCalculation();
+	ui->displayLabel->setText(QString::fromStdString(displayOutput));
 }
 
 void QtCalculatorConverter::on_clear_clicked()
