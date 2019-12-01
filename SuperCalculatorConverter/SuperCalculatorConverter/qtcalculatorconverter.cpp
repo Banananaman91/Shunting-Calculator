@@ -102,6 +102,12 @@ void QtCalculatorConverter::on_multiply_clicked()
 	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
 }
 
+void QtCalculatorConverter::on_modulus_clicked()
+{
+	displayOutput = inputOutput.InputOutput("%");
+	ui->displayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+}
+
 void QtCalculatorConverter::on_equals_clicked()
 {
 	inputOutput.RunCalculation();
@@ -148,4 +154,52 @@ void QtCalculatorConverter::on_pushButton_clicked()
 	std::string inputValue = inputValueString.toStdString();
 	displayOutput = inputOutput.ConvertLength(input, output, inputValue);
 	ui->converterOutput->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_volumeConvert_clicked()
+{
+	QString inputString = ui->volumeInputList->currentItem()->text();
+	QString outputString = ui->volumeOutputList->currentItem()->text();
+	QString inputValueString = ui->volumeTextInput->toPlainText();
+	std::string input = inputString.toStdString();
+	std::string output = outputString.toStdString();
+	std::string inputValue = inputValueString.toStdString();
+	displayOutput = inputOutput.ConvertVolume(input, output, inputValue);
+	ui->converterOutput_2->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_weightConvert_clicked()
+{
+	QString inputString = ui->weightInputList->currentItem()->text();
+	QString outputString = ui->weightOutputList->currentItem()->text();
+	QString inputValueString = ui->weightInputText->toPlainText();
+	std::string input = inputString.toStdString();
+	std::string output = outputString.toStdString();
+	std::string inputValue = inputValueString.toStdString();
+	displayOutput = inputOutput.ConvertWeight(input, output, inputValue);
+	ui->weightOutputText->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_speedConvert_clicked()
+{
+	QString inputString = ui->speedInputList->currentItem()->text();
+	QString outputString = ui->speedOutputList->currentItem()->text();
+	QString inputValueString = ui->speedInputText->toPlainText();
+	std::string input = inputString.toStdString();
+	std::string output = outputString.toStdString();
+	std::string inputValue = inputValueString.toStdString();
+	displayOutput = inputOutput.ConvertSpeed(input, output, inputValue);
+	ui->speedOutputText->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_angleConvert_clicked()
+{
+	QString inputString = ui->angleInputList->currentItem()->text();
+	QString outputString = ui->angleOutputList->currentItem()->text();
+	QString inputValueString = ui->angleInputText->toPlainText();
+	std::string input = inputString.toStdString();
+	std::string output = outputString.toStdString();
+	std::string inputValue = inputValueString.toStdString();
+	displayOutput = inputOutput.ConvertAngle(input, output, inputValue);
+	ui->angleOutputText->setText(QString::fromStdString(displayOutput));
 }

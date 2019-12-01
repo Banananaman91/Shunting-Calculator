@@ -12,12 +12,10 @@ namespace InputOutput {
 		std::string ClearOutput();
 		std::string RunCalculation();
 		std::string ConvertLength(std::string input, std::string output, std::string inputValue);
-		enum LengthConversions {
-			Metre,
-			Centimetre,
-			Kilometre,
-			Millimetre
-		};
+		std::string ConvertVolume(std::string input, std::string output, std::string inputValue);
+		std::string ConvertWeight(std::string input, std::string output, std::string inputValue);
+		std::string ConvertSpeed(std::string input, std::string output, std::string inputValue);
+		std::string ConvertAngle(std::string input, std::string output, std::string inputValue);
 	};
 }
 

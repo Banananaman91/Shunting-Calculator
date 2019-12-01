@@ -59,6 +59,16 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_volumeConvert_clicked();
+
+    void on_weightConvert_clicked();
+
+    void on_speedConvert_clicked();
+
+    void on_angleConvert_clicked();
+
+    void on_modulus_clicked();
+
 private:
     Ui::QtCalculatorConverter *ui;
 	std::string displayOutput;
