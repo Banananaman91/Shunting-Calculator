@@ -9,9 +9,20 @@ using namespace Conversions;
 Converter converter;
 
 std::string ProcessOutput::InputOutput(std::string input) {
+	if (equationInput.empty() && !isdigit(input.back())) {
+		if (input.back() == '.') {
+			equationInput = "0" + input;
+			return equationInput;
+		}
+		else return "0";
+	}
 	if (!equationInput.empty() && !isdigit(input.back())) {
 		if (!isdigit(equationInput.back()) && input.back() != '(' && equationInput.back() != ')') {
-			return equationInput;
+			if (input.back() == '.') {
+				equationInput += "0" + input;
+				return equationInput;
+			}
+			else return equationInput;
 		}
 	}
 	if (!equationInput.empty() && isdigit(equationInput.back())) {
@@ -20,8 +31,14 @@ std::string ProcessOutput::InputOutput(std::string input) {
 		}
 	}
 	if (equationInput == "0") {
-		equationInput = input;
-		return equationInput;
+		if (input.back() == '.') {
+			equationInput += input;
+			return equationInput;
+		}
+		else {
+			equationInput = input;
+			return equationInput;
+		}
 	}
 	equationInput += input;
 	return equationInput;
@@ -35,11 +52,13 @@ std::string ProcessOutput::ClearOutput() {
 
 std::string ProcessOutput::RunCalculation() {
 	ShuntingAlgorithm shuntingAlgorithm;
-
-	resultOutput = shuntingAlgorithm.ShuntingYardAlgorithm(equationInput);
-	previousEquation = equationInput + "\n" + resultOutput;
-	equationInput = "";
-	return resultOutput;
+	if (isdigit(equationInput.back())) {
+		resultOutput = shuntingAlgorithm.ShuntingYardAlgorithm(equationInput);
+		previousEquation = equationInput + "\n" + resultOutput;
+		equationInput = resultOutput;
+		return previousEquation;
+	}
+	else return "Error";
 }
 
 std::string InputOutput::ProcessOutput::ConvertLength(std::string input, std::string output, std::string inputValue)

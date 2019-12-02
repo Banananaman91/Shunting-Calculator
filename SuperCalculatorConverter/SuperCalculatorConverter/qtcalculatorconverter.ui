@@ -220,7 +220,7 @@
        <rect>
         <x>90</x>
         <y>10</y>
-        <width>281</width>
+        <width>271</width>
         <height>91</height>
        </rect>
       </property>
@@ -342,7 +342,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Length">
        <attribute name="title">
