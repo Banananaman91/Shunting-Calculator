@@ -11,7 +11,7 @@ ShuntingAlgorithm::ShuntingAlgorithm() {
 
 }
 
-std::string ShuntingAlgorithm::ShuntingYardAlgorithm(std::string inputString) {
+std::string ShuntingAlgorithm::ShuntingYardAlgorithm(std::string inputString, bool game) {
 	Token tokenObject;
 	std::deque<Token> tokens = tokenObject.ConvertToToken(inputString);
 	std::deque<Token> queueStack = ShuntIt(tokens);
@@ -59,10 +59,16 @@ std::string ShuntingAlgorithm::ShuntingYardAlgorithm(std::string inputString) {
 
 		}
 	}
-
-	double result = calculateStack.back();
-	std::string stringResult = std::to_string(result);
-	return stringResult;
+	if (!game) {
+		double result = calculateStack.back();
+		std::string stringResult = std::to_string(result);
+		return stringResult;
+	}
+	else {
+		int result = calculateStack.back();
+		std::string stringResult = std::to_string(result);
+		return stringResult;
+	}
 }
 
 

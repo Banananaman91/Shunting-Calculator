@@ -8,9 +8,11 @@ namespace InputOutput {
 		std::string equationInput;
 		std::string previousEquation;
 		std::string conversionResult;
+		int gamePoints;
 		std::string InputOutput(std::string input);
 		std::string ClearOutput();
 		std::string RunCalculation();
+		std::string RunGameCalculation();
 		std::string ConvertLength(std::string input, std::string output, std::string inputValue);
 		std::string ConvertVolume(std::string input, std::string output, std::string inputValue);
 		std::string ConvertWeight(std::string input, std::string output, std::string inputValue);

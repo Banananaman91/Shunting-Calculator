@@ -53,10 +53,20 @@ std::string ProcessOutput::ClearOutput() {
 std::string ProcessOutput::RunCalculation() {
 	ShuntingAlgorithm shuntingAlgorithm;
 	if (isdigit(equationInput.back())) {
-		resultOutput = shuntingAlgorithm.ShuntingYardAlgorithm(equationInput);
+		resultOutput = shuntingAlgorithm.ShuntingYardAlgorithm(equationInput, false);
 		previousEquation = equationInput + "\n" + resultOutput;
 		equationInput = resultOutput;
 		return previousEquation;
+	}
+	else return "Error";
+}
+
+std::string InputOutput::ProcessOutput::RunGameCalculation()
+{
+	ShuntingAlgorithm shuntingAlgorithm;
+	if (isdigit(equationInput.back())) {
+		resultOutput = shuntingAlgorithm.ShuntingYardAlgorithm(equationInput, true);
+		return resultOutput;
 	}
 	else return "Error";
 }
