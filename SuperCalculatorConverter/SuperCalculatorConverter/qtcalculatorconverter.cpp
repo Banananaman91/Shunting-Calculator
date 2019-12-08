@@ -243,3 +243,150 @@ void QtCalculatorConverter::on_angleConvert_clicked()
 		ui->angleOutputText->setText(QString::fromStdString(displayOutput));
 	}
 }
+void QtCalculatorConverter::on_gameZero_clicked()
+{
+	displayOutput = inputOutput.InputOutput("0");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameOne_clicked()
+{
+	displayOutput = inputOutput.InputOutput("1");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameTwo_clicked()
+{
+	displayOutput = inputOutput.InputOutput("2");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameThree_clicked()
+{
+	displayOutput = inputOutput.InputOutput("3");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameFour_clicked()
+{
+	displayOutput = inputOutput.InputOutput("4");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameFive_clicked()
+{
+	displayOutput = inputOutput.InputOutput("5");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameSix_clicked()
+{
+	displayOutput = inputOutput.InputOutput("6");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameSeven_clicked()
+{
+	displayOutput = inputOutput.InputOutput("7");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameEight_clicked()
+{
+	displayOutput = inputOutput.InputOutput("8");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameNine_clicked()
+{
+	displayOutput = inputOutput.InputOutput("9");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameAddition_clicked()
+{
+	displayOutput = inputOutput.InputOutput("+");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameMinus_clicked()
+{
+	displayOutput = inputOutput.InputOutput("-");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameMultiply_clicked()
+{
+	displayOutput = inputOutput.InputOutput("*");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameDivide_clicked()
+{
+	displayOutput = inputOutput.InputOutput("/");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameModulus_clicked()
+{
+	displayOutput = inputOutput.InputOutput("%");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameLeftParentheses_clicked()
+{
+	displayOutput = inputOutput.InputOutput("(");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameRightParentheses_clicked()
+{
+	displayOutput = inputOutput.InputOutput(")");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gamePower_clicked()
+{
+	displayOutput = inputOutput.InputOutput("^");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameDecimal_clicked()
+{
+	displayOutput = inputOutput.InputOutput("^");
+	ui->gameDisplayLabel->setText(QString::fromStdString(displayOutput));
+}
+
+void QtCalculatorConverter::on_gameClear_clicked()
+{
+	inputOutput.ClearOutput();
+	ui->gameDisplayLabel->setText(QString::fromStdString(inputOutput.equationInput));
+}
+
+void QtCalculatorConverter::on_gameEquals_clicked()
+{
+	displayOutput = inputOutput.RunGameCalculation();
+	std::string numberResult = ui->gameNumberResult->text().toStdString();
+	if (displayOutput == ui->gameNumberResult->text().toStdString() && previousGameNumber != ui->gameNumberResult->text().toInt()) {
+		ui->gameWinLoseDisplay->setText("Win");
+		points += 10;
+		ui->gamePointsDisplay->setText(QString::number(points));
+		previousGameNumber = ui->gameNumberResult->text().toInt();
+	}
+	else if (previousGameNumber == ui->gameNumberResult->text().toInt()) {
+		ui->gameDisplayLabel->setText("Press Play");
+	}
+	else {
+		ui->gameWinLoseDisplay->setText("Lose");
+		points -= 10;
+		ui->gamePointsDisplay->setText(QString::number(points));
+		previousGameNumber = ui->gameNumberResult->text().toInt();
+	}
+	
+}
+
+void QtCalculatorConverter::on_gameStart_clicked()
+{
+	int randResult = rand() % 999 + 1;
+	ui->gameNumberResult->setText(QString::number(randResult));
+}

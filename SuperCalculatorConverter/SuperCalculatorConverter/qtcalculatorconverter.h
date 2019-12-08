@@ -17,6 +17,7 @@ public:
     ~QtCalculatorConverter();
 
 private slots:
+
     void on_two_clicked();
 
     void on_one_clicked();
@@ -69,9 +70,55 @@ private slots:
 
     void on_modulus_clicked();
 
+    void on_gameZero_clicked();
+
+    void on_gameOne_clicked();
+
+    void on_gameTwo_clicked();
+
+    void on_gameThree_clicked();
+
+    void on_gameFour_clicked();
+
+    void on_gameFive_clicked();
+
+    void on_gameSix_clicked();
+
+    void on_gameSeven_clicked();
+
+    void on_gameNine_clicked();
+
+    void on_gameAddition_clicked();
+
+    void on_gameMinus_clicked();
+
+    void on_gameMultiply_clicked();
+
+    void on_gameDivide_clicked();
+
+    void on_gameModulus_clicked();
+
+    void on_gameLeftParentheses_clicked();
+
+    void on_gameRightParentheses_clicked();
+
+    void on_gamePower_clicked();
+
+    void on_gameDecimal_clicked();
+
+    void on_gameClear_clicked();
+
+    void on_gameEquals_clicked();
+
+    void on_gameStart_clicked();
+
+    void on_gameEight_clicked();
+
 private:
     Ui::QtCalculatorConverter *ui;
 	std::string displayOutput;
+	int points = 0;
+	QString previousGameNumber = "0";
 };
 
 #endif // QTCALCULATORCONVERTER_H
