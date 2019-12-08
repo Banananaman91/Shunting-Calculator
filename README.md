@@ -1,2 +1,2 @@
 # Shunting-Calculator
-C++ Calculator created with windows forms
+C++ Calculator and Converter created with Qt
